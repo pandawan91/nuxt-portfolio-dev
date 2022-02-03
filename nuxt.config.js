@@ -6,24 +6,17 @@ export default {
   head: {
     title: process.env.GITHUB_USERNAME,
     htmlAttrs: {
-      lang: 'en'
+      lang: 'de'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.DEV_DESCRIPTION},
+      { hid: 'description', name: 'description', content: "Let's build some software, Like a bantha xD. Another blog about software, tech and nerdyness. German and English content. Enjoy your stay."},
       { name: 'format-detection', content: 'telephone=no' },
-      /* Twitter */
-      {hid: "twitter:card", name: "twitter:card", content: "summary"},
-      {hid: "twitter:site", name: "twitter:site", content: process.env.DEV_NAME},
-      {hid: "twitter:creator", name: "twitter:creator", content: process.env.DEV_NAME},
-      {hid: "twitter:title", name: "twitter:title", content: process.env.DEV_NAME},
-      {hid: "twitter:description", name: "twitter:description", content: process.env.DEV_DESCRIPTION},
-      {hid: "twitter:image", name: "twitter:image", content: '/favicon.ico'},
       /* Open-Graph */
       {hid: "og:type", name: "og:type", content: "website"},
-      {hid: "og:site_name", name: "og:site_name", content: process.env.DEV_NAME},
-      {hid: "og:description", name: "og:description", content: process.env.DEV_DESCRIPTION},
+      {hid: "og:site_name", name: "og:site_name", content: "Vuong Ngo"},
+      {hid: "og:description", name: "og:description", content: "Let's build some software, Like a bantha xD. Another blog about software, tech and nerdyness. German and English content. Enjoy your stay."},
       {hid: "og:image", name: "og:image", content: '/favicon.ico'},
     ],
     link: [
@@ -80,16 +73,15 @@ export default {
 
   publicRuntimeConfig: {
     baseURL: process.env.BASE_URL,
-    githubUsername: process.env.GITHUB_USERNAME,
+    githubUsername: "pandawan91",
     notionTableId: process.env.NOTION_TABLE_ID,
     notionAboutPageId: process.env.NOTION_ABOUT_PAGE_ID,
-    devName: process.env.DEV_NAME,
-    devDescription: process.env.DEV_DESCRIPTION,
-    devRole: process.env.DEV_ROLE,
-    devGithubLink: process.env.DEV_GITHUB_LINK,
-    devTwitterLink: process.env.DEV_TWITTER_LINK,
-    devLinkedinLink: process.env.DEV_LINKEDIN_LINK,
-    devLogo: process.env.DEV_LOGO,
+    devName: "Vuong",
+    devDescription: "Let's build some software, Like a bantha xD. Another blog about software, tech and nerdyness. German and English content. Enjoy your stay.",
+    devRole: "DevOps Engineer",
+    devGithubLink: "https://github.com/pandawan91",
+    devLinkedinLink: "https://www.linkedin.com/in/vuongngo-/",
+    devLogo: "Vuong Ngo",
   },
 
 }

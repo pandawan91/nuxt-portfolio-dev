@@ -7,12 +7,6 @@
     </a>
 
     <a
-      aria-label="Twitter"
-      class="social-link hover:text-primary mx-3" :href=$config.devTwitterLink>
-      <IconTwitter class="h-6 w-6"/>
-    </a>
-
-    <a
 aria-label="LinkedIn"
        class="social-link hover:text-primary mx-3" :href=$config.devLinkedinLink>
       <IconLinkedin class="h-6 w-6"/>

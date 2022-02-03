@@ -14,7 +14,7 @@ export default {
   async asyncData({ $axios, $notion, $config: { githubUsername, notionTableId } }) {
     const projects = await $axios
       .get(
-        'https://api.github.com/search/repositories?q=user:' + githubUsername + '&sort=stars&per_page=3'
+        'https://api.github.com/search/repositories?q=user:' + githubUsername + '&order=updated&per_page=7'
       )
       .catch((errors) => {
         // console.log(errors)

@@ -1,0 +1,21 @@
+version: "3.5"
+
+networks:
+  web:
+    external: true
+
+services:
+  nuxt-notion-blog:
+    build:
+      context: .
+      args:
+        - BASE_URL=${BASE_URL}
+        - GOOGLE_ANALYTICS_ID=${GOOGLE_ANALYTICS_ID}
+        - NOTION_TABLE_ID=${NOTION_TABLE_ID}
+        - NOTION_ABOUT_PAGE_ID=${NOTION_ABOUT_PAGE_ID}
+    networks:
+      - web
+    restart: always
+    labels:
+      - traefik.http.routers.nuxt-notion-blog.rule=Host(`${HOST_URL}`)
+      - traefik.port=3000

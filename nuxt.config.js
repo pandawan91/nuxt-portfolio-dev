@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: process.env.GITHUB_USERNAME,
+    title: 'Vuong',
     htmlAttrs: {
       lang: 'de'
     },
@@ -76,6 +76,8 @@ export default {
     githubUsername: "pandawan91",
     notionTableId: process.env.NOTION_TABLE_ID,
     notionAboutPageId: process.env.NOTION_ABOUT_PAGE_ID,
+    notionPrivacyPageId: process.env.NOTION_PRIVACY_PAGE_ID,
+    notionImprintPageId: process.env.NOTION_IMPRINT_PAGE_ID,
     devName: "Vuong",
     devDescription: "Let's build some software, Like a bantha xD. Another blog about software, tech and nerdyness. German and English content. Enjoy your stay.",
     devRole: "DevOps Engineer",

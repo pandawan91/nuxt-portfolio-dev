@@ -16,14 +16,11 @@ ENV NOTION_PRIVACY_PAGE_ID=${NOTION_PRIVACY_PAGE_ID}
 ARG NOTION_IMPRINT_PAGE_ID
 ENV NOTION_IMPRINT_PAGE_ID=${NOTION_IMPRINT_PAGE_ID}
 
+RUN echo ${BASE_URL}
+
 COPY . .
 
-RUN yarn install \
-  --prefer-offline \
-  --frozen-lockfile \
-  --non-interactive \
-  --production=false \
-  --check-files
+RUN yarn install 
 
 RUN yarn generate
 

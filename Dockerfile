@@ -1,4 +1,4 @@
-FROM node:lts as builder
+FROM node:lts as build-stage
 
 WORKDIR /app
 
@@ -11,6 +11,10 @@ ARG NOTION_TABLE_ID
 ENV NOTION_TABLE_ID=${NOTION_TABLE_ID}
 ARG NOTION_ABOUT_PAGE_ID
 ENV NOTION_ABOUT_PAGE_ID=${NOTION_ABOUT_PAGE_ID}
+ARG NOTION_PRIVACY_PAGE_ID
+ENV NOTION_PRIVACY_PAGE_ID=${NOTION_PRIVACY_PAGE_ID}
+ARG NOTION_IMPRINT_PAGE_ID
+ENV NOTION_IMPRINT_PAGE_ID=${NOTION_IMPRINT_PAGE_ID}
 
 COPY . .
 
@@ -29,13 +33,7 @@ RUN rm -rf node_modules && \
   --non-interactive \
   --production=true
 
-FROM node:lts
-
-WORKDIR /app
-
-COPY --from=builder /app  .
-
-ENV HOST 0.0.0.0
-EXPOSE 3000
-
-CMD [ "yarn", "start" ]
+FROM nginx:stable-alpine as production-stage
+COPY --from=build-stage /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

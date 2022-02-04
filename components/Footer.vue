@@ -15,7 +15,18 @@
           <Social/>
         </div>
       </div>
+      <div class="flex flex-col items-center justify-between mt-6 md:mt-0 md:flex-row"> 
+        <div class="logo flex items-center flex-row">
+          <nuxt-link class="footer-nav-link" to="/imprint">Impressum</nuxt-link>
+          <nuxt-link class="footer-nav-link" to="/privacy">Datenschutz</nuxt-link>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
+<style>
+.footer-nav-link {
+  @apply ml-5 font-medium text-center text-xs text-gray-700 dark:text-gray-200 dark:hover:text-primary hover:text-primary m-auto;
+}
+</style>

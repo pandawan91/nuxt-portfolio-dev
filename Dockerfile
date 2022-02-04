@@ -22,7 +22,8 @@ RUN yarn install \
   --prefer-offline \
   --frozen-lockfile \
   --non-interactive \
-  --production=false
+  --production=false \
+  --check-files
 
 RUN yarn generate
 
@@ -31,7 +32,8 @@ RUN rm -rf node_modules && \
   --prefer-offline \
   --pure-lockfile \
   --non-interactive \
-  --production=true
+  --production=true \
+  --check-files
 
 FROM nginx:stable-alpine as production-stage
 COPY --from=build-stage /app/dist /usr/share/nginx/html

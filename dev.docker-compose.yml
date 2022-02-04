@@ -18,4 +18,4 @@ services:
     restart: always
     labels:
       - traefik.http.routers.nuxt-notion-blog.rule=Host(`${HOST_URL}`)
-      - traefik.port=3000
+      - traefik.port=80

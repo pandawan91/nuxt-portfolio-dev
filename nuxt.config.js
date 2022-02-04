@@ -83,5 +83,4 @@ export default {
     devLinkedinLink: "https://www.linkedin.com/in/vuongngo-/",
     devLogo: "Vuong Ngo",
   },
-
 }
